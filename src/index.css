@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-sand-100 text-charcoal font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F8F3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bbddcb;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8ec5ac;
+  }
+}
+
+/* Audio wave animation */
+@keyframes soundWave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+.sound-wave-bar {
+  animation: soundWave 1.2s ease-in-out infinite;
+}
+
+.sound-wave-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.sound-wave-bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.sound-wave-bar:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.sound-wave-bar:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Shimmer animation for AI generation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.ai-shimmer {
+  background: linear-gradient(90deg, rgba(23,75,56,0.04) 25%, rgba(230,184,92,0.15) 50%, rgba(23,75,56,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
